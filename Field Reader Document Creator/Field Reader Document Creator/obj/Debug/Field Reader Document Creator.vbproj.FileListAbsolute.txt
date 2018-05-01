@@ -1,0 +1,38 @@
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.exe.config
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.exe
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.pdb
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.xml
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbprojResolveAssemblyReference.cache
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field_Reader_Document_Creator.Form1.resources
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field_Reader_Document_Creator.Resources.resources
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbproj.GenerateResource.Cache
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.exe
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.xml
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.pdb
+C:\Users\Will\Documents\Visual Studio 2015\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbproj.ResolveComReference.cache
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.exe.config
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.exe
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.pdb
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.xml
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbproj.ResolveComReference.cache
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field_Reader_Document_Creator.Form1.resources
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field_Reader_Document_Creator.Resources.resources
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbproj.GenerateResource.Cache
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.exe
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.xml
+\\Mac\Home\Documents\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.pdb
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.exe.config
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.exe
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.pdb
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\bin\Debug\Field Reader Document Creator.xml
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbprojResolveAssemblyReference.cache
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbproj.ResolveComReference.cache
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field_Reader_Document_Creator.Form1.resources
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field_Reader_Document_Creator.Resources.resources
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbproj.GenerateResource.Cache
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.vbproj.CoreCompileInputs.cache
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.exe
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.xml
+\\usfile058\Home$\whoward\MyDocs\Visual Studio 2017\Projects\Field Reader Document Creator\Field Reader Document Creator\obj\Debug\Field Reader Document Creator.pdb
