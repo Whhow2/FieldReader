@@ -130,20 +130,36 @@ Public Class Form1
 		Dim wordDoc2Save As Word.Document
 		wordDoc2Save = New Word.Document
 		Dim amkCmd As String
-        Dim amkArg As String
-        amkCmd = """C:\Program Files (x86)\Watchtower\MEPS Prepress 1.8.4\AUTOMARK.exe"""
+		Dim amkArg As String
+		Dim tempMPSFile As String
+		amkCmd = """C:\Program Files (x86)\Watchtower\MEPS Prepress 1.8.4\AUTOMARK.exe"""
         'Dim FindObject As Word.Find = Word.Application
         For Each file In files
 			destFile = System.IO.Path.Combine(Label3.Text, System.IO.Path.GetFileName(file).ToString)
 			System.IO.File.Copy(file, destFile, True)
 			ProgressBar1.Value += 1
-			destMPSFile = Replace(destFile, ".docx", ".mps")
-			'destMPSFile = destFile & ".mps"
-			wordDoc2Save = appWord.Documents.Open(destFile)
-			wordDoc2Save.SaveAs2(FileName:=destMPSFile, FileFormat:=100)
-			wordDoc2Save.Close()
+			If System.IO.Path.GetExtension(Label3.Text) = ".docx" Then
+				destMPSFile = Replace(destFile, ".docx", ".mps")
+				wordDoc2Save = appWord.Documents.Open(destFile)
+				wordDoc2Save.SaveAs2(FileName:=destMPSFile, FileFormat:=100)
+				wordDoc2Save.Close()
+				System.IO.File.Delete(destFile)
+			ElseIf System.IO.Path.GetExtension(Label3.Text) = ".doc" Then
+				destMPSFile = Replace(destFile, ".doc", ".mps")
+				wordDoc2Save = appWord.Documents.Open(destFile)
+				wordDoc2Save.SaveAs2(FileName:=destMPSFile, FileFormat:=100)
+				wordDoc2Save.Close()
+				System.IO.File.Delete(destFile)
+			Else
+				tempMPSFile = destFile & "-temp.mps"
+				destMPSFile = destFile & ".mps"
+				My.Computer.FileSystem.RenameFile(destFile, System.IO.Path.GetFileName(tempMPSFile).ToString)
+				wordDoc2Save = appWord.Documents.Open(tempMPSFile)
+				wordDoc2Save.SaveAs2(FileName:=destMPSFile, FileFormat:=100)
+				wordDoc2Save.Close()
+				System.IO.File.Delete(tempMPSFile)
+			End If
 			MEPSFilesList.Add(destMPSFile)
-			System.IO.File.Delete(destFile)
 			'My.Computer.FileSystem.RenameFile(destFile, System.IO.Path.GetFileName(destMPSFile).ToString)
 			Label4.Text = Int(ProgressBar1.Value * 100 / ProgressBar1.Maximum) & "%"
 		Next file
@@ -169,7 +185,7 @@ Public Class Form1
             wordDoc.Sections(1).Footers(1).PageNumbers.Add(1)
             appWord.ActiveDocument.TrackRevisions = True
             appWord.ActiveDocument.ShowRevisions = True
-			destWDFile = Replace(mepsFile, ".mps", ".docx")
+			destWDFile = Replace(mepsFile, ".mps", "")
 			appWord.ActiveDocument.SaveAs2(destWDFile)
             wordDoc.Close()
             wordDoc = Nothing
