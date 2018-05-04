@@ -180,9 +180,281 @@ Public Class Form1
                 .LanguageID = Word.WdLanguageID.wdEnglishUS
                 .NoProofing = True
             End With
-            appWord.Run("ProcessQuestions")
-            appWord.Run("ProcessOther")
-            wordDoc.Sections(1).Footers(1).PageNumbers.Add(1)
+			'appWord.Run("ProcessQuestions")
+			'appWord.Run("ProcessOther")
+
+			'ProcessQuestions
+			'Selection.HomeKey Unit:=wdStory
+			appWord.Selection.HomeKey(Word.WdUnits.wdStory)
+			appWord.ActiveDocument.TrackRevisions = False
+
+			'Find source placeholder in document.
+			With appWord.Selection.Find
+				.ClearFormatting()
+				.Text = "[[???]]"
+				'.Text = GetPlaceholderText(Source)
+				.Replacement.Text = ""
+				.Forward = True
+				.Wrap = Word.WdFindWrap.wdFindContinue
+				.Format = False
+				.MatchCase = False
+				.MatchWholeWord = False
+				.MatchKashida = False
+				.MatchDiacritics = False
+				.MatchAlefHamza = False
+				.MatchControl = False
+				.MatchWildcards = False
+				.MatchSoundsLike = False
+				.MatchAllWordForms = False
+				.Execute()
+			End With
+
+			'Begin processing loop if placeholder found.
+			Do While appWord.Selection.Find.Found = True
+				'Select source placeholder and cut.
+				'ActiveDocument.TrackRevisions = False
+				appWord.Selection.Delete(Word.WdUnits.wdCharacter, 1)
+				'ActiveDocument.TrackRevisions = True
+				appWord.Selection.MoveDown(Word.WdUnits.wdParagraph, 1, Word.WdMovementType.wdExtend)
+				appWord.Selection.Cut()
+				appWord.Selection.HomeKey(Word.WdUnits.wdStory)
+				appWord.Selection.Find.ClearFormatting()
+				appWord.Selection.Find.Replacement.ClearFormatting()
+
+				'Find destination placeholder.
+				With appWord.Selection.Find
+					.Text = "[[@@@]]"
+					'.Text = GetPlaceholderText(Destination)
+					.Forward = True
+					.Wrap = Word.WdFindWrap.wdFindContinue
+					.Format = False
+					.MatchCase = False
+					.MatchWholeWord = False
+					.MatchKashida = False
+					.MatchDiacritics = False
+					.MatchAlefHamza = False
+					.MatchControl = False
+					.MatchWildcards = False
+					.MatchSoundsLike = False
+					.MatchAllWordForms = False
+					.Execute()
+
+					'Paste into destination placeholder.
+					'ActiveDocument.TrackRevisions = False
+					appWord.Selection.Delete(Word.WdUnits.wdCharacter, 1)
+					'ActiveDocument.TrackRevisions = True
+					appWord.Selection.PasteAndFormat(Word.WdRecoveryType.wdFormatOriginalFormatting)
+
+					'Append optional backspace (if specified).
+					'If backspace = True Then
+					'ActiveDocument.TrackRevisions = False
+					'Selection.TypeBackspace
+					'Selection.TypeText Text:=" "
+					'ActiveDocument.TrackRevisions = True
+					'End If
+				End With
+
+				'Jump back to the start of the document.
+				appWord.Selection.HomeKey(Word.WdUnits.wdStory)
+
+				'Reset find parameters.
+				With appWord.Selection.Find
+					.ClearFormatting()
+					.Text = "[[???]]"
+					'.Text = GetPlaceholderText(Source)
+					.Replacement.Text = ""
+					.Forward = True
+					.Wrap = Word.WdFindWrap.wdFindContinue
+					.Format = False
+					.MatchCase = False
+					.MatchWholeWord = False
+					.MatchKashida = False
+					.MatchDiacritics = False
+					.MatchAlefHamza = False
+					.MatchControl = False
+					.MatchWildcards = False
+					.MatchSoundsLike = False
+					.MatchAllWordForms = False
+					.Execute()
+				End With
+			Loop
+
+			'ProcessOther
+			'Selection.HomeKey Unit:=wdStory
+			appWord.Selection.HomeKey(Word.WdUnits.wdStory)
+			appWord.ActiveDocument.TrackRevisions = False
+
+			'Find source placeholder in document.
+			With appWord.Selection.Find
+				.ClearFormatting()
+				.Text = "[[%%%]]"
+				'.Text = GetPlaceholderText(Source)
+				.Replacement.Text = ""
+				.Forward = True
+				.Wrap = Word.WdFindWrap.wdFindContinue
+				.Format = False
+				.MatchCase = False
+				.MatchWholeWord = False
+				.MatchKashida = False
+				.MatchDiacritics = False
+				.MatchAlefHamza = False
+				.MatchControl = False
+				.MatchWildcards = False
+				.MatchSoundsLike = False
+				.MatchAllWordForms = False
+				.Execute()
+			End With
+
+			'Begin processing loop if placeholder found.
+			Do While appWord.Selection.Find.Found = True
+				'Select source placeholder and cut.
+				'Selection.Delete Unit:=wdCharacter, Count:=1
+				appWord.Selection.Delete(Word.WdUnits.wdCharacter, 1)
+				'ActiveDocument.TrackRevisions = True
+				'Selection.MoveDown Unit:=wdParagraph, Count:=1, Extend:=wdExtend
+				appWord.Selection.MoveDown(Word.WdUnits.wdParagraph, 1, Word.WdMovementType.wdExtend)
+				appWord.Selection.Cut()
+				'Selection.HomeKey Unit:=wdStory
+				appWord.Selection.HomeKey(Word.WdUnits.wdStory)
+				appWord.Selection.Find.ClearFormatting()
+				appWord.Selection.Find.Replacement.ClearFormatting()
+
+				'Find destination placeholder.
+				With appWord.Selection.Find
+					.Text = "[[$$$]]"
+					'.Text = GetPlaceholderText(Destination)
+					.Forward = True
+					.Wrap = Word.WdFindWrap.wdFindContinue
+					.Format = False
+					.MatchCase = False
+					.MatchWholeWord = False
+					.MatchKashida = False
+					.MatchDiacritics = False
+					.MatchAlefHamza = False
+					.MatchControl = False
+					.MatchWildcards = False
+					.MatchSoundsLike = False
+					.MatchAllWordForms = False
+					.Execute()
+
+					'Paste into destination placeholder.
+					'ActiveDocument.TrackRevisions = False
+					'Selection.Delete Unit:=wdCharacter, Count:=1
+					appWord.Selection.Delete(Word.WdUnits.wdCharacter, 1)
+					'ActiveDocument.TrackRevisions = True
+					appWord.Selection.PasteAndFormat(Word.WdRecoveryType.wdFormatOriginalFormatting)
+
+					'Append optional backspace (if specified).
+					'If backspace = True Then
+					'ActiveDocument.TrackRevisions = False
+					'Selection.TypeBackspace
+					'Selection.TypeText Text:=" "
+					'ActiveDocument.TrackRevisions = True
+					'End If
+				End With
+
+				'Jump back to the start of the document.
+				'Selection.HomeKey Unit:=wdStory
+				appWord.Selection.HomeKey(Word.WdUnits.wdStory)
+
+				'Reset find parameters.
+				With appWord.Selection.Find
+					.ClearFormatting()
+					.Text = "[[%%%]]"
+					'.Text = GetPlaceholderText(Source)
+					.Replacement.Text = ""
+					.Forward = True
+					.Wrap = Word.WdFindWrap.wdFindContinue
+					.Format = False
+					.MatchCase = False
+					.MatchWholeWord = False
+					.MatchKashida = False
+					.MatchDiacritics = False
+					.MatchAlefHamza = False
+					.MatchControl = False
+					.MatchWildcards = False
+					.MatchSoundsLike = False
+					.MatchAllWordForms = False
+					.Execute()
+				End With
+			Loop
+
+			'Begin processing loop if placeholder found.
+			Do While appWord.Selection.Find.Found = True
+				'Select source placeholder and cut.
+				'ActiveDocument.TrackRevisions = False
+				'Selection.Delete Unit:=wdCharacter, Count:=1
+				appWord.Selection.Delete(Word.WdUnits.wdCharacter, 1)
+				'ActiveDocument.TrackRevisions = True
+				'Selection.MoveDown Unit:=wdParagraph, Count:=1, Extend:=wdExtend
+				appWord.Selection.MoveDown(Word.WdUnits.wdParagraph, 1, Word.WdMovementType.wdExtend)
+				appWord.Selection.Cut()
+				'Selection.HomeKey Unit:=wdStory
+				appWord.Selection.HomeKey(Word.WdUnits.wdStory)
+				appWord.Selection.Find.ClearFormatting()
+				appWord.Selection.Find.Replacement.ClearFormatting()
+
+				'Find destination placeholder.
+				With appWord.Selection.Find
+					.Text = "[[@@@]]"
+					'.Text = GetPlaceholderText(Destination)
+					.Forward = True
+					.Wrap = Word.WdFindWrap.wdFindContinue
+					.Format = False
+					.MatchCase = False
+					.MatchWholeWord = False
+					.MatchKashida = False
+					.MatchDiacritics = False
+					.MatchAlefHamza = False
+					.MatchControl = False
+					.MatchWildcards = False
+					.MatchSoundsLike = False
+					.MatchAllWordForms = False
+					.Execute()
+
+					'Paste into destination placeholder.
+					'ActiveDocument.TrackRevisions = False
+					'Selection.Delete Unit:=wdCharacter, Count:=1
+					appWord.Selection.Delete(Word.WdUnits.wdCharacter, 1)
+					'ActiveDocument.TrackRevisions = True
+					appWord.Selection.PasteAndFormat(Word.WdRecoveryType.wdFormatOriginalFormatting)
+
+					'Append optional backspace (if specified).
+					'If backspace = True Then
+					'ActiveDocument.TrackRevisions = False
+					'Selection.TypeBackspace
+					'Selection.TypeText Text:=" "
+					'ActiveDocument.TrackRevisions = True
+					'End If
+				End With
+
+				'Jump back to the start of the document.
+				'Selection.HomeKey Unit:=wdStory
+				appWord.Selection.HomeKey(Word.WdUnits.wdStory)
+
+				'Reset find parameters.
+				With appWord.Selection.Find
+					.ClearFormatting()
+					.Text = "[[???]]"
+					'.Text = GetPlaceholderText(Source)
+					.Replacement.Text = ""
+					.Forward = True
+					.Wrap = Word.WdFindWrap.wdFindContinue
+					.Format = False
+					.MatchCase = False
+					.MatchWholeWord = False
+					.MatchKashida = False
+					.MatchDiacritics = False
+					.MatchAlefHamza = False
+					.MatchControl = False
+					.MatchWildcards = False
+					.MatchSoundsLike = False
+					.MatchAllWordForms = False
+					.Execute()
+				End With
+			Loop
+
+			wordDoc.Sections(1).Footers(1).PageNumbers.Add(1)
             appWord.ActiveDocument.TrackRevisions = True
             appWord.ActiveDocument.ShowRevisions = True
 			destWDFile = Replace(mepsFile, ".mps", "")
